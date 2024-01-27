@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 # Fetch jobs from API
-response = requests.get('http://your-api/jobs')
+response = requests.get('http://127.0.0.1:5000/jobs')
 data = response.json()
 
 # Convert to DataFrame
