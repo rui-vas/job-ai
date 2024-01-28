@@ -1,17 +1,6 @@
 import streamlit as st
-import pandas as pd
-import requests
 
-# Fetch jobs from API
-response = requests.get('http://127.0.0.1:5000/jobs')
-data = response.json()
-
-# Convert to DataFrame
-df = pd.DataFrame(data)
-
-# Display data in Streamlit
-st.title('Job Dashboard')
-st.dataframe(df)
+st.set_page_config(page_title="Plotting Demo", page_icon="📈")
 
 # Add a title
 st.title("My Profile")
@@ -39,13 +28,3 @@ with st.form("cv_form"):
     submitted = st.form_submit_button("Submit")
     if submitted:
         st.write("Your CV has been submitted!")
-
-
-# Add a sidebar that requests an openai_api_key
-with st.sidebar:
-
-    # Add a subtitle
-    st.subheader("OpenAI API Key")
-    openai_api_key = st.text_input("OpenAI API Key", type="password")
-    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-
